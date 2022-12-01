@@ -2,16 +2,40 @@ import { Course } from "./entities/course";
 import { Student } from "./entities/student";
 import { Teacher } from "./entities/teacher";
 import { Activitie } from "./entities/activitie";
+import { GradesBookSetup } from "./entities/gradesBookSetup";
+
 
 let students: Student[] = [];
 let teachers: Teacher[] = [];
 let courses: Course[] = [];
 let activitie: Activitie[] = [];
+let gradesBookSetup: GradesBookSetup[] = [];
+
+
+enum Courses
+{
+    Programacion = 'programacion de datos',
+    BaseDatos = 'Base de datos',
+    Metodologias = 'metodologias'
+
+}
+
+enum Teachers
+{
+    Programacion = 'programacion de datos',
+    BaseDatos = 'Base de datos',
+    Metodologias = 'metodologias'
+
+}
+
+
 
 // refactorisar 
 function readFromHtml(id:string, ):string {
     return (<HTMLInputElement>document.getElementById(id)).value;
 }
+
+
 
 function addStudent():void{
 
@@ -44,6 +68,8 @@ function addTeacher():void{
     
     teachers.push(currentTeacher);
     console.log(teachers)
+    initTeacher()
+    
 
 };
 
@@ -69,7 +95,58 @@ function addActivitie():void{
     
     activitie.push(currentActivitie);
     console.log(activitie)
+    initCourse()
 
 };
 
+function addGradesBookSetup():void{
 
+    let currentGradesBookSetup:GradesBookSetup = {
+        value: readFromHtml("value"),
+        course:readFromHtml("value"),
+        activity:readFromHtml("value"),
+        maximunGrade: parseInt(readFromHtml("value")),
+ 
+    }  
+    
+    gradesBookSetup.push(currentGradesBookSetup);
+    console.log(gradesBookSetup)
+    initCourse()
+
+
+
+
+};
+
+function initCourse():void {
+    let courseGradeBook = document.getElementById("course") as HTMLSelectElement
+ 
+    let courses = Object.values(Courses)
+    courses.forEach(
+        (value)=>
+        {
+            let option = document.createElement("option")
+            option.value = value;
+            option.text = value;
+            courseGradeBook.add(option)
+        }
+    )
+}
+
+function initTeacher():void {
+    let area = document.getElementById("area") as HTMLSelectElement
+ 
+    let areas = Object.values(Teachers)
+    areas.forEach(
+        (value)=>
+        {
+            let option = document.createElement("option")
+            option.value = value;
+            option.text = value;
+            area.add(option)
+        }
+    )
+}
+
+initTeacher()
+initCourse();

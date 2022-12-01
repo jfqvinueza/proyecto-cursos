@@ -4,6 +4,19 @@ let students = [];
 let teachers = [];
 let courses = [];
 let activitie = [];
+let gradesBookSetup = [];
+var Courses;
+(function (Courses) {
+    Courses["Programacion"] = "programacion de datos";
+    Courses["BaseDatos"] = "Base de datos";
+    Courses["Metodologias"] = "metodologias";
+})(Courses || (Courses = {}));
+var Teachers;
+(function (Teachers) {
+    Teachers["Programacion"] = "programacion de datos";
+    Teachers["BaseDatos"] = "Base de datos";
+    Teachers["Metodologias"] = "metodologias";
+})(Teachers || (Teachers = {}));
 // refactorisar 
 function readFromHtml(id) {
     return document.getElementById(id).value;
@@ -34,6 +47,7 @@ function addTeacher() {
     };
     teachers.push(currentTeacher);
     console.log(teachers);
+    initTeacher();
 }
 ;
 function addCourse() {
@@ -52,5 +66,40 @@ function addActivitie() {
     };
     activitie.push(currentActivitie);
     console.log(activitie);
+    initCourse();
 }
 ;
+function addGradesBookSetup() {
+    let currentGradesBookSetup = {
+        value: readFromHtml("value"),
+        course: readFromHtml("value"),
+        activity: readFromHtml("value"),
+        maximunGrade: parseInt(readFromHtml("value")),
+    };
+    gradesBookSetup.push(currentGradesBookSetup);
+    console.log(gradesBookSetup);
+    initCourse();
+}
+;
+function initCourse() {
+    let courseGradeBook = document.getElementById("course");
+    let courses = Object.values(Courses);
+    courses.forEach((value) => {
+        let option = document.createElement("option");
+        option.value = value;
+        option.text = value;
+        courseGradeBook.add(option);
+    });
+}
+function initTeacher() {
+    let area = document.getElementById("area");
+    let areas = Object.values(Teachers);
+    areas.forEach((value) => {
+        let option = document.createElement("option");
+        option.value = value;
+        option.text = value;
+        area.add(option);
+    });
+}
+initTeacher();
+initCourse();

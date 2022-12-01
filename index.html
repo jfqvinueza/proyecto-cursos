@@ -165,13 +165,7 @@
             class="form-select" multiple aria-label="multiple select example"
             id="area"
             name="area"
-            >
-              <option value="data base">data base</option>
-              <option value="interfaz grafica">interfaz grafica</option>
-              <option value="administracion">administracion</option>
-              <option value="programacion visual">programacion visual</option>
-
-            </select>
+            ></select>
           </form>
         </div>
         <div class="card-footer text-muted text-center">
@@ -245,6 +239,68 @@
           </div>
           <div class="card-footer text-muted text-center">
             <button class="btn btn-primary"  type="submit" onclick="addCourse()">save</button>
+          </div>
+        </div>    
+         
+      </div>   <hr>
+
+      <div class="container">
+
+        <header>
+          <p class="h1 text-center mb-3">Grades Book setup</p>
+        </header>
+        
+        <div class="card mx-5">
+          <div class="card-header">Dates</div>
+          <div class="card-body">
+            <form action="">
+
+              <div class="mb-3">
+                <label for="value" class="form-label">value</label>
+                <input type="text"
+                  class="form-control" name="value" id="value" aria-describedby="helpId" placeholder="">
+                <small id="helpId" class="form-text text-muted">Help text</small>
+              </div>
+
+              <div>
+                <label class="fw-semibold" for="name">Name:</label>
+                <input
+                  class="form-control my-3"
+                  type="text"
+                  id="name"
+                  name="name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="course" class="form-label">Course</label>
+                <select class="form-select form-select-lg" name="course" id="course">                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="fw-semibold" for="name">activity:</label>
+                <input
+                  class="form-control my-3"
+                  type="text"
+                  id="activity"
+                  name="activity"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label class="fw-semibold" for="name">Maximun Grade:</label>
+                <input
+                  class="form-control my-3"
+                  type="text"
+                  id="maximunGrade"
+                  name="maximunGrade"
+                />
+              </div>
+
+              
+            </form>
+          </div>
+          <div class="card-footer text-muted text-center">
+            <button class="btn btn-primary"  type="submit" onclick="addGradesBookSetup()">save</button>
           </div>
         </div>    
          
