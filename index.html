@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es" >
+ 
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <title>Proyecto cursos</title>
+  </head>
+  <body>
+
+  
+
+    
+
+    <main class="mb-5">
+
+      <div class="container">
+
+        <header>
+          <p class="h1 text-center mb-3">Student</p>
+        </header>
+        
+        <div class="card mx-5">
+          <div class="card-header">Date</div>
+          <div class="card-body">
+            <form action="">
+              <label class="fw-semibold" for="name">Name:</label>
+              <input
+                class="form-control my-3"
+                type="text"
+                id="name"
+                name="name"
+              />
+              <label class="fw-semibold" for="identification">Identification:</label>
+              <input
+                class="form-control my-3"
+                min="0"
+                type="number"
+                id="identification"
+                name="identification"
+              />
+              <label class="fw-semibold" for="mail">Email:</label>
+              <input
+                class="form-control my-3"
+                type="email"
+                id="mail"
+                name="mail"
+              />
+              <label class="fw-semibold" for="enrollment"
+                >Enrollment:</label
+              >
+              <input
+                class="form-control my-3"
+                min="0"
+                type="number"
+                id="enrollment"
+                name="enrollment"
+              />
+              <label class="fw-semibold" for="adress">Adress:</label>
+              <input
+                class="form-control my-3"
+                type="text"
+                id="adress"
+                name="adress"
+            
+              />
+              <label class="fw-semibold" for="carrer">Carrer:</label>
+              <select 
+              class="form-select" multiple aria-label="multiple select example"              
+              id="carrer"
+              name="carrer"
+              >
+                <option value="software">software</option>
+                <option value="Modas">Modas</option>
+                <option value="Arte culinario">Arte culinario</option>
+                <option value="Marketing">Marketing</option>
+              </select><hr>
+              <label class="fw-semibold" for="carrerLevel">carrerLevel:</label>
+              <input
+                class="form-control my-3"
+                type="text"
+                id="carrerLevel"
+                name="carrerLevel"
+              />
+            </form>
+          </div>
+          <div class="card-footer text-muted text-center">
+            <button class="btn btn-primary"  onclick="addStudent()">Save</button>
+          </div>
+        </div>
+        
+        
+  
+      </div><hr>
+
+      <div class="container">
+        <header>
+          <p class="h1 text-center mb-3">Teacher</p>
+        </header>
+        <div class="card mx-5">
+        <div class="card-header">Date</div>
+        <div class="card-body">
+          <form action="">
+            <label class="fw-semibold" for="name">Name:</label>
+            <input
+              class="form-control my-3"
+              type="text"
+              id="name"
+              name="name"
+            />
+            <label class="fw-semibold" for="identification-teacher">Identification:</label>
+            <input
+              class="form-control my-3"
+              min="0"
+              type="number"
+              id="identification-teacher"
+              name="identification-teacher"
+            />
+            <label class="fw-semibold" for="mail">Email:</label>
+            <input
+              class="form-control my-3"
+              type="text"
+              id="mail"
+              name="mail"
+            />
+            <label class="fw-semibold" for="enrollment"
+              >Title:</label
+            >
+            <input
+              class="form-control my-3"
+              min="0"
+              type="number"
+              id="title"
+              name="title"
+            />
+            <label class="fw-semibold" for="adress">Adress:</label>
+            <input
+              class="form-control my-3"
+              type="text"
+              id="adress"
+              name="adress"
+            />
+            <label class="fw-semibold" for="carrer">GradeLevel:</label>
+            <input
+              class="form-control my-3"
+              type="text"
+              id="gradeLevel"
+              name="gradeLevel"
+            />
+            <label class="fw-semibold" for="area">Area:</label>
+            <select 
+            class="form-select" multiple aria-label="multiple select example"
+            id="area"
+            name="area"
+            >
+              <option value="data base">data base</option>
+              <option value="interfaz grafica">interfaz grafica</option>
+              <option value="administracion">administracion</option>
+              <option value="programacion visual">programacion visual</option>
+
+            </select>
+          </form>
+        </div>
+        <div class="card-footer text-muted text-center">
+          <button class="btn btn-primary"  type="submit" onclick="addTeacher()">Save</button>
+        </div>
+      </div>
+      </div><hr>
+
+      <div class="container">
+
+        <header>
+          <p class="h1 text-center mb-3">Course</p>
+        </header>
+        
+        <div class="card mx-5">
+          <div class="card-header">Dates</div>
+          <div class="card-body">
+            <form action="">
+              <label class="fw-semibold" for="name">Name:</label>
+              <input
+                class="form-control my-3"
+                type="text"
+                id="name"
+                name="name"
+              />
+              <label class="fw-semibold" for="parallel">Parallel:</label>
+              <input
+                class="form-control my-3"
+                min="0"
+                type="number"
+                id="pallarel"
+                name="pallarel"
+              />
+              
+              <label class="fw-semibold" for="hours">Hours:</label>
+              <input
+                class="form-control my-3"
+                type="text"
+                id="hours"
+                name="hours"
+              />
+            </form>
+          </div>
+          <div class="card-footer text-muted text-center">
+            <button class="btn btn-primary"  type="submit" onclick="addCourse()">save</button>
+          </div>
+        </div>
+        
+        
+  
+      </div>   <hr>
+
+      <div class="container">
+
+        <header>
+          <p class="h1 text-center mb-3">Activitie</p>
+        </header>
+        
+        <div class="card mx-5">
+          <div class="card-header">Dates</div>
+          <div class="card-body">
+            <form action="">
+              <label class="fw-semibold" for="name">Name:</label>
+              <input
+                class="form-control my-3"
+                type="text"
+                id="name"
+                name="name"
+              />
+            </form>
+          </div>
+          <div class="card-footer text-muted text-center">
+            <button class="btn btn-primary"  type="submit" onclick="addCourse()">save</button>
+          </div>
+        </div>    
+         
+      </div>   <hr>
+
+
+      <script>let exports = {}; </script>
+      <script src="dist/main.js"></script>
+
+    
+    </main>
+
+ 
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./dist/main.js"></script>
+  </body>
+</html>
